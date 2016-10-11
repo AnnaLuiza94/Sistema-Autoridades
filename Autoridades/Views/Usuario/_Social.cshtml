@@ -1,0 +1,184 @@
+﻿@model Autoridades.Models.SocialPhoneViewModel
+    <div class="col-xs-12">
+        <div class="col-md-6">
+            <h3> Passo 1 - Social </h3>
+            <div class="form-group">
+                <label class="control-label">Tipo de órgão:</label>
+                <select class="form-control" required="required">
+                    <option value="Selecione">Selecione</option>
+                </select>
+                @Html.ValidationMessageFor(model => model.Social.OrganType)
+            </div>
+            <div class="form-group">
+                <label class="control-label">Sub tipo de órgão:</label>
+                <select class="form-control" required="required">
+                    <option value="Selecione">Selecione</option>
+                </select>
+                @Html.ValidationMessageFor(model => model.Social.OrganSubType)
+            </div>
+            <div class="form-group">
+                <label class="control-label">Departamento:</label>
+                <select class="form-control" required>
+                    <option value="Selecione">Selecione</option>
+                </select>
+                @Html.ValidationMessageFor(model => model.Social.Departament)
+            </div>
+            <div class="form-group">
+                <label class="control-label" >Sub departamento:</label>
+                <select class="form-control" required="required">
+                    <option value="Selecione">Selecione</option>
+                </select>
+                @Html.ValidationMessageFor(model => model.Social.SubDepartament)
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">Foto:</label>
+                <input id="file" name="file" type="file" />
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">Cargo:</label>
+                <select class="form-control" required="required">
+                    <option value="Selecione">Selecione</option>
+                </select>
+                @Html.ValidationMessageFor(model => model.Social.Responsability)
+            </div>
+
+            <div class="form-group">
+                <label class="control-label" >Tratamento:</label>
+                <select class="form-control" required="required">
+                    <option value="Selecione">Selecione</option>
+                </select>
+                @Html.ValidationMessageFor(model => model.Social.Treatment)
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">Partido:</label>
+                <select class="form-control">
+                    <option value="Selecione">Selecione</option>
+                </select>
+                @Html.ValidationMessageFor(model => model.Social.Party)
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">Título:</label>
+                <select class="form-control">
+                    <option value="Selecione">Selecione</option>
+                </select>
+                @Html.ValidationMessageFor(model => model.Social.Title)
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">Posto/Grad:</label>
+                <select class="form-control">
+                    <option value="Selecione">Selecione</option>
+                </select>
+                @Html.ValidationMessageFor(model => model.Social.Post)
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">Empresa/Órgão:</label>
+                @Html.TextBoxFor(model => model.Social.CompanyName, new { @class = "form-control", RequiredAttributeAdapter = true })
+                @Html.ValidationMessageFor(model => model.Social.CompanyName)
+            </div>
+            <div class="form-group">
+                <label class="control-label">OPM:</label>
+                <select class="form-control">
+                    <option value="Selecione">Selecione</option>
+                </select>
+                @Html.ValidationMessageFor(model => model.Social.Opm)
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">Site:</label>
+                @Html.TextBoxFor(model => model.Social.Site, new { @class = "form-control", RequiredAttributeAdapter = true })
+                @Html.ValidationMessageFor(model => model.Social.Site)
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">E-mail:</label>
+                @Html.TextBoxFor(model => model.Social.CorporativeEmail, new { @class = "form-control", RequiredAttributeAdapter = true })
+                @Html.ValidationMessageFor(model => model.Social.CorporativeEmail)
+            </div>
+
+        </div>
+        <div class="col-md-6">
+            <h4>Endereço</h4>
+
+            <div class="form-group">
+                <label class="control-label">Logradouro:</label>
+                <select class="form-control">
+                    <option value="Selecione">Selecione</option>
+                </select>
+                @Html.ValidationMessageFor(model => model.Social.Logradouro)
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">Endereço:</label>
+                @Html.TextBoxFor(model => model.Social.Address, new { @class = "form-control", RequiredAttributeAdapter = true })
+                @Html.ValidationMessageFor(model => model.Social.Address)
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">Complemento:</label>
+                @Html.TextBoxFor(model => model.Social.Complement, new { @class = "form-control", RequiredAttributeAdapter = true })
+                @Html.ValidationMessageFor(model => model.Social.Complement)
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">Bairro:</label>
+                @Html.TextBoxFor(model => model.Social.Neighborhood, new { @class = "form-control", RequiredAttributeAdapter = true })
+                @Html.ValidationMessageFor(model => model.Social.Neighborhood)
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">UF:</label>
+                <select class="form-control">
+                    <option value="Selecione">Selecione</option>
+                </select>
+                @Html.ValidationMessageFor(model => model.Social.CityInitials)
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">Município:</label>
+                @Html.TextBoxFor(model => model.Social.City, new { @class = "form-control", RequiredAttributeAdapter = true })
+                @Html.ValidationMessageFor(model => model.Social.City)
+            </div>
+
+
+            <div class="form-group">
+                <label class="control-label">CEP:</label>
+                @Html.TextBoxFor(model => model.Social.Cep, new { @class = "form-control", RequiredAttributeAdapter = true })
+                @Html.ValidationMessageFor(model => model.Social.Cep)
+            </div>
+
+        </div>
+        <div class="col-md-6">
+            <hr />
+            <h4>Telefone</h4>
+            <div class="form-group">
+                <label class="control-label">Telefone:</label>
+                @Html.TextBoxFor(model => model.Telefone.PhoneNumber, new { @class = "form-control", RequiredAttributeAdapter = true })
+                @Html.ValidationMessageFor(model => model.Telefone.PhoneNumber)
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">Ramal:</label>
+                @Html.TextBoxFor(model => model.Telefone.PhoneNumberBranch, new { @class = "form-control", RequiredAttributeAdapter = true })
+                @Html.ValidationMessageFor(model => model.Telefone.PhoneNumberBranch)
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">Tipo:</label>
+                <select class="form-control">
+                    <option value="Selecione">Selecione</option>
+                </select>
+                @Html.ValidationMessageFor(model => model.Telefone.PhoneNumberType)
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Adicionar" class="btn btn-warning btn-xs" />
+            </div>
+            <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Próximo</button>
+        </div>
+    </div>

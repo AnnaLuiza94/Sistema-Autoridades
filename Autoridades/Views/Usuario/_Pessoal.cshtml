@@ -1,0 +1,50 @@
+﻿@model Autoridades.Models.PessoalFilhosViewModel
+    <div class="col-xs-12">
+        <div class="col-md-12">
+            <h3> Passo 1 - Pessoal</h3>
+            <div class="form-group">
+                <label class="control-label">Nome:</label>
+                @Html.TextBoxFor(model => model.Usuario.Name, new { @class = "form-control", RequiredAttributeAdapter = true })
+                @Html.ValidationMessageFor(model => model.Usuario.Name)
+            </div>
+            <div class="form-group">
+                <label class="control-label">Data de nascimento:</label>
+                @Html.TextBoxFor(model => model.Usuario.BirthDate, new { @class = "form-control", RequiredAttributeAdapter = true })
+                @Html.ValidationMessageFor(model => model.Usuario.BirthDate)
+            </div>
+            <div class="form-group">
+                <label class="control-label">Nome do(a) esposo(a):</label>
+                @Html.TextBoxFor(model => model.Usuario.WifeOrHusbandName, new { @class = "form-control", RequiredAttributeAdapter = true })
+                @Html.ValidationMessageFor(model => model.Usuario.WifeOrHusbandName)
+            </div>
+            <div class="form-group">
+                <label class="control-label">Aniversário do(a) esposo(a):</label>
+                @Html.TextBoxFor(model => model.Usuario.WifeOrHusbandBirthDate, new { @class = "form-control", RequiredAttributeAdapter = true })
+                @Html.ValidationMessageFor(model => model.Usuario.WifeOrHusbandBirthDate)
+            </div>
+            
+            <div class="form-group">
+                <div class="checkbox">
+                    @Html.CheckBoxFor(m => m.Usuario.HaveChildren)
+                    <label class="control-label">Tem filhos?</label>
+                </div>
+            </div>
+
+            <div class="have-children hidden">
+                <div class="form-group">
+                    <label class="control-label">Nome do(a) filho(a):</label>
+                    @Html.TextBoxFor(model => model.Filhos.Name, new {@class = "form-control", RequiredAttributeAdapter = true})
+                    @Html.ValidationMessageFor(model => model.Filhos.Name)
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Aniversário do(a) filho(a):</label>
+                    @Html.TextBoxFor(model => model.Filhos.BirthDate, new {@class = "form-control", RequiredAttributeAdapter = true})
+                    @Html.ValidationMessageFor(model => model.Filhos.BirthDate)
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Adicionar" class="btn btn-warning btn-xs" />
+                </div>
+            </div>
+            <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Próximo</button>
+        </div>
+    </div>
