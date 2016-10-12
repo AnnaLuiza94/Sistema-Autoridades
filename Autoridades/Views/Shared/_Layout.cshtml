@@ -5,9 +5,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
-    <link href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+
 
     @Styles.Render("~/Content/css")
+    <link href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" rel="stylesheet" />
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
@@ -30,6 +31,7 @@
                     @if (Request.IsAuthenticated)
                     {
                         <li>@Html.ActionLink("Informações", "Informacoes", "Usuario")</li>
+                        <li>@Html.ActionLink("Buscar deputados", "buscar-deputados", "Deputados")</li>
                     }
                 </ul>
                 @Html.Partial("_LoginPartial")
@@ -43,11 +45,12 @@
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
     </div>
-    <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
     @RenderSection("scripts", required: false)
 </body>
 </html>

@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.ServiceModel;
+using System.ServiceModel.Channels;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using System.Xml;
@@ -13,11 +16,18 @@ namespace Autoridades.Controllers
 {
     public class DeputadosController : Controller
     {
-        // GET: Deputados
+
         public ActionResult Index()
         {
+            return View();
+        }
+
+        [HttpGet, ActionName("buscar-deputados")]
+        public ActionResult BuscarDeputados()
+        {
+           
             var client = new DeputadosSoapClient("DeputadosSoap");
-            var deputados = ConvertNode<List<Deputado>>(client.ObterDeputados());
+            var deputados = ConvertNode<List<Deputado>>(client.ObterDeputados()).OrderBy(x=>x.Nome).ToList();
             return View(deputados);
         }
 
@@ -37,9 +47,4 @@ namespace Autoridades.Controllers
             return result;
         }
     }
-
-
-
-    
-
 }

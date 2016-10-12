@@ -267,6 +267,7 @@
     <Content Include="Views\Usuario\_Contatos.cshtml" />
     <Content Include="Views\Deputados\Index.cshtml" />
     <None Include="Service References\wsDeputados\Deputados.wsdl" />
+    <Content Include="Views\Deputados\buscar-deputados.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
